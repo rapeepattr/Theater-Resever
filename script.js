@@ -15,6 +15,11 @@ container.addEventListener('click', e => {
     }
 })
 
+selectedMovie.addEventListener('change', e => {
+    price = +e.target.value
+    updateSelected()
+})
+
 function updateSelected() {
     const selectedSeats = document.querySelectorAll('.row .seat.selected')
     const countSeats = selectedSeats.length
