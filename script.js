@@ -6,7 +6,7 @@ const total = document.getElementById('total')
 
 const selectedMovie = document.getElementById('movie')
 
-let price = +selectedMovie.value // convert to integer
+let price = +selectedMovie.value 
 
 container.addEventListener('click', e => {
     if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
