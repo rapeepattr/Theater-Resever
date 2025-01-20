@@ -6,7 +6,7 @@ const total = document.getElementById('total')
 
 const selectedMovie = document.getElementById('movie')
 
-let price = +selectedMovie.value 
+let price = +selectedMovie.value
 
 container.addEventListener('click', e => {
     if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
@@ -37,3 +37,20 @@ function setMovieData(movieIndex, moviePrice) {
     localStorage.setItem('movieIndex', movieIndex)
     localStorage.setItem('moviePrice', moviePrice)
 }
+
+function showData() {
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'))
+    const selectedMovieIndex = localStorage.getItem('movieIndex')
+
+    seats.forEach((seat, index) => {
+        if (selectedSeats.indexOf(index) > -1) {
+            seat.classList.add('selected')
+        }
+    })
+
+    if (selectedMovieIndex != null) {
+        selectedMovie.selectedIndex = selectedMovieIndex
+    }
+} 
+
+showData()
